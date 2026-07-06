@@ -1,1 +1,1 @@
-const names = ''
+const name = ''
