@@ -1,3 +1,16 @@
-const names = ''
+import 'dotenv/config.js';
+import express from 'express';
 
-console.log(names)
+import { PostgresHelper } from './src/db/postgres/helper.js';
+
+const app = express();
+
+app.get('/', async (req, res) => {
+    const result = await PostgresHelper.query('SELECT * FROM users');
+
+    res.send(JSON.stringify(result));
+});
+
+app.listen(3000, () => {
+    console.log('Server is running on http://localhost:3000');
+});
