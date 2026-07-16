@@ -1,5 +1,6 @@
 import { randomUUID } from 'crypto';
 import bcrypt from 'bcrypt';
+import { EmailAlreadyInUseError } from '../errors/user.js';
 
 import { PostgresCreateUserRepository } from '../repositories/postgres/create-user.js';
 import { PostgresGetUserByEmailRepository } from '../repositories/postgres/get-user-by-email.js';
@@ -15,7 +16,7 @@ export class CreateUserUseCase {
             );
 
         if (userWithProvidedEmail) {
-            throw new Error('Email already in use');
+            throw new EmailAlreadyInUseError(createUserParams.email);
         }
 
         // gerar ID do usuário
