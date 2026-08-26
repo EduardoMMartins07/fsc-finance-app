@@ -1,15 +1,17 @@
-import { randomUUID } from 'crypto';
+import { v4 as uuidv4 } from 'uuid';
 import bcrypt from 'bcrypt';
-import { EmailAlreadyInUseError } from '../errors/user.js';
 
-import { PostgresCreateUserRepository } from '../repositories/postgres/create-user.js';
-import { PostgresGetUserByEmailRepository } from '../repositories/postgres/get-user-by-email.js';
+import {
+    PostgresCreateUserRepository,
+    PostgresGetUserByEmailRepository,
+} from '../repositories/postgres/index.js';
+import { EmailAlreadyInUseError } from '../errors/user.js';
 
 export class CreateUserUseCase {
     async execute(createUserParams) {
-        // TODO: verificar se o e-mail já está em uso
         const postgresGetUserByEmailRepository =
             new PostgresGetUserByEmailRepository();
+
         const userWithProvidedEmail =
             await postgresGetUserByEmailRepository.execute(
                 createUserParams.email,
@@ -20,9 +22,9 @@ export class CreateUserUseCase {
         }
 
         // gerar ID do usuário
-        const userId = randomUUID();
+        const userId = uuidv4();
 
-        // criptografar a senha do usuário
+        // criptografar a senha
         const hashedPassword = await bcrypt.hash(createUserParams.password, 10);
 
         // inserir o usuário no banco de dados
