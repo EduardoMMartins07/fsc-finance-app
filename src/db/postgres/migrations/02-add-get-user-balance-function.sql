@@ -10,11 +10,11 @@ BEGIN
     SELECT
         SUM(CASE WHEN type = 'EARNING' THEN amount ELSE 0 END) AS earnings,
         SUM(CASE WHEN type = 'EXPENSE' THEN amount ELSE 0 END) AS expenses,
-        SUM(CASE WHEN type = 'INVESTMENT' THEN amount ELSE 0 END) AS investments,
+        SUM(CASE WHEN type = 'INVESTIMENT' THEN amount ELSE 0 END) AS investments,
         (
             SUM(CASE WHEN type = 'EARNING' THEN amount ELSE 0 END) -
             SUM(CASE WHEN type = 'EXPENSE' THEN amount ELSE 0 END) +
-            SUM(CASE WHEN type = 'INVESTMENT' THEN amount ELSE 0 END)
+            SUM(CASE WHEN type = 'INVESTIMENT' THEN amount ELSE 0 END)
         ) AS balance
     FROM transactions
     WHERE user_id = get_user_balance.uid;

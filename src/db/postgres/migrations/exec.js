@@ -8,9 +8,10 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const execMigrations = async () => {
-    const client = await pool.connect();
+    let client;
 
     try {
+        client = await pool.connect();
         const files = fs
             .readdirSync(__dirname)
             .filter((file) => file.endsWith('.sql'));
@@ -27,8 +28,12 @@ const execMigrations = async () => {
         console.log('All migrations were executed successfully!');
     } catch (error) {
         console.error(error);
+        process.exitCode = 1;
     } finally {
-        await client.release();
+        if (client) {
+            client.release();
+        }
+        await pool.end();
     }
 };
 
