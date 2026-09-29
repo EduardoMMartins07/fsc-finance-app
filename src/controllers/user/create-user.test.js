@@ -103,10 +103,31 @@ describe('Create User Controller', () => {
         );
         const httpRequest = {
             body: {
-                first_name: 'Felipe',
-                last_name: 'Rocha',
-                email: 'fe',
-                password: '1234567',
+                first_name: 'Janet',
+                last_name: 'Doe',
+                email: 'janet@doe.com',
+                password: '12345678',
+            },
+        };
+
+        // act
+        const result = await createUserController.execute(httpRequest);
+
+        // assert
+        expect(result.statusCode).toBe(400);
+    });
+
+    it('should return 400 if password is not provided', async () => {
+        // arrange
+        const createUserUseCase = new CreateUserUseCaseStub();
+        const createUserController = new CreateUserController(
+            createUserUseCase,
+        );
+        const httpRequest = {
+            body: {
+                first_name: 'Janet',
+                last_name: 'Doe',
+                email: 'janet@doe.com',
             },
         };
 
