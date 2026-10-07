@@ -5,8 +5,9 @@
     "main": "index.js",
     "type": "module",
     "scripts": {
-        "test": "jest --passWithNoTests --silent",
-        "test:watch": "jest --watch --passWithNoTests --silent",
+        "test": "node --experimental-vm-modules ./node_modules/jest/bin/jest.js --passWithNoTests --silent",
+        "test:watch": "node --experimental-vm-modules ./node_modules/jest/bin/jest.js --watch --passWithNoTests --silent",
+        "test:coverage": "node --experimental-vm-modules ./node_modules/jest/bin/jest.js --passWithNoTests --silent --coverage",
         "postinstall": "npx husky install && npx prisma generate",
         "migrations": "node ./src/db/postgres/migrations/exec.js",
         "start:dev": "node --watch index.js"

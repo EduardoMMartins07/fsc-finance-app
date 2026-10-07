@@ -1,5 +1,6 @@
 import { CreateTransactionController } from './create-transaction';
 import { faker } from '@faker-js/faker';
+import { jest } from '@jest/globals';
 
 describe('Create Transaction Controller', () => {
     class CreateTransactionUseCaseStub {

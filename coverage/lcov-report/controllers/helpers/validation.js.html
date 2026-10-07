@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">35.89% </span>
+                <span class="strong">48.71% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>14/39</span>
+                <span class='fraction'>19/39</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/0</span>
+                <span class='fraction'>4/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">60% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/5</span>
+                <span class='fraction'>3/5</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">35.89% </span>
+                <span class="strong">48.71% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>14/39</span>
+                <span class='fraction'>19/39</span>
             </div>
         
             
@@ -102,24 +102,24 @@
 <a name='L37'></a><a href='#L37'>37</a>
 <a name='L38'></a><a href='#L38'>38</a>
 <a name='L39'></a><a href='#L39'>39</a>
-<a name='L40'></a><a href='#L40'>40</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L40'></a><a href='#L40'>40</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -140,23 +140,23 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import validator from 'validator';
 import { badRequest } from './http.js';
 &nbsp;
-export const checkIfIdIsValid = (<span class="fstat-no" title="function not covered" >id) =&gt; validator.isUUID(id);</span>
+export const checkIfIdIsValid = (id) =&gt; validator.isUUID(id);
 &nbsp;
-export const invalidIdResponse = <span class="fstat-no" title="function not covered" >() =&gt;</span>
-<span class="cstat-no" title="statement not covered" >    badRequest({</span>
-<span class="cstat-no" title="statement not covered" >        message: 'The provided id is not valid.',</span>
+export const invalidIdResponse = () =&gt;
+    badRequest({
+        message: 'The provided id is not valid.',
     });
 &nbsp;
-export const requiredFieldIsMissingResponse = (<span class="fstat-no" title="function not covered" >field) =&gt;</span>
-<span class="cstat-no" title="statement not covered" >    badRequest({</span>
-<span class="cstat-no" title="statement not covered" >        message: `The field ${field} is required.`,</span>
+export const requiredFieldIsMissingResponse = (field) =&gt;
+    badRequest({
+        message: `The field ${field} is required.`,
     });
 &nbsp;
-export const checkIfIsString = (<span class="fstat-no" title="function not covered" >value) =&gt; typeof value === 'string';</span>
+export const checkIfIsString = <span class="fstat-no" title="function not covered" >(value) =&gt; typeof value === 'string';</span>
 &nbsp;
 export const validateRequiredFields = <span class="fstat-no" title="function not covered" >(params, requiredFields) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >    for (const field of requiredFields) {</span>
@@ -179,7 +179,7 @@ export const validateRequiredFields = <span class="fstat-no" title="function not
 <span class="cstat-no" title="statement not covered" >        ok: true,</span>
 <span class="cstat-no" title="statement not covered" >        missingField: undefined,</span>
 <span class="cstat-no" title="statement not covered" >    };</span>
-<span class="cstat-no" title="statement not covered" >};</span>
+};
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -187,7 +187,7 @@ export const validateRequiredFields = <span class="fstat-no" title="function not
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-09-29T01:45:25.303Z
+                at 2026-10-07T01:32:15.930Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

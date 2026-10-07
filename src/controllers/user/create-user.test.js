@@ -1,3 +1,4 @@
+import { jest } from '@jest/globals';
 import { faker } from '@faker-js/faker';
 import { CreateUserController } from './create-user';
 import { EmailAlreadyInUseError } from '../../errors/user';
