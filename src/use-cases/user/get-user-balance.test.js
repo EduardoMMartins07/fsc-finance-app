@@ -1,3 +1,4 @@
+import { jest } from '@jest/globals';
 import { UserNotFoundError } from '../../errors/user';
 import { GetUserBalanceUseCase } from './get-user-balance';
 import { faker } from '@faker-js/faker';

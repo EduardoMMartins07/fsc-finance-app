@@ -1,3 +1,4 @@
+import { jest } from '@jest/globals';
 import { DeleteUserUseCase } from './delete-user';
 import { faker } from '@faker-js/faker';
 

@@ -1,3 +1,4 @@
+import { jest } from '@jest/globals';
 import { faker } from '@faker-js/faker';
 import { GetTransactionsByUserIdUseCase } from './get-transactions-by-user-id';
 import { UserNotFoundError } from '../../errors/user';

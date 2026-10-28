@@ -1,3 +1,4 @@
+import { jest } from '@jest/globals';
 import { GetUserByIdUseCase } from './get-user-by-id';
 import { faker } from '@faker-js/faker';
 
